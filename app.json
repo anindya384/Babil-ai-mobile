@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "8eedb681-3a91-4cef-b049-2c1131790ae4"
+      }
+    },
+    "owner": "babilai",
+    "slug": "babil-ai",
+    "android": {
+      "package": "com.babilai.babilai"
+    }
+  }
+}

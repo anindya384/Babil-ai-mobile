@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 80% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 80% 50%;
+
+    --radius: 0.5rem;
+
+    /* Babil brand colors */
+    --brand-primary: 240 80% 50%;
+    --brand-secondary: 260 85% 60%;
+    --brand-accent: 280 90% 70%;
+    
+    /* AI chat colors */
+    --ai-chatgpt: 158 64% 52%;
+    --ai-claude: 14 100% 57%;
+    --ai-gemini: 264 83% 58%;
+    --ai-grok: 338 78% 60%;
+    --ai-perplexity: 264 83% 58%;
+    --ai-mistral: 350 89% 60%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* X2 Theme - Dark Mode */
+    --background: 0 0% 10%;           /* #1A1A1A - Very dark charcoal */
+    --foreground: 0 0% 100%;          /* #FFFFFF - White text */
+
+    --card: 0 0% 15%;                 /* #262626 - Slightly lighter dark gray */
+    --card-foreground: 0 0% 100%;     /* #FFFFFF - White text on cards */
+
+    --popover: 0 0% 15%;              /* #262626 - Same as card */
+    --popover-foreground: 0 0% 100%;  /* #FFFFFF - White text */
+
+    --primary: 45 100% 51%;           /* #FFD700 - Bright yellow/gold */
+    --primary-foreground: 0 0% 10%;   /* Dark text on yellow */
+
+    --secondary: 0 0% 20%;            /* #333333 - Secondary dark gray */
+    --secondary-foreground: 0 0% 100%; /* White text */
+
+    --muted: 0 0% 20%;                /* #333333 - Muted dark gray */
+    --muted-foreground: 0 0% 63%;     /* #A0A0A0 - Light gray text */
+
+    --accent: 45 100% 51%;            /* #FFD700 - Bright yellow/gold */
+    --accent-foreground: 0 0% 10%;    /* Dark text on yellow */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;               /* #404040 - Dark gray borders */
+    --input: 0 0% 20%;                /* #333333 - Input backgrounds */
+    --ring: 45 100% 51%;              /* #FFD700 - Yellow ring focus */
+    
+    /* X2 Custom gradient variables */
+    --gradient-primary: linear-gradient(135deg, hsl(45, 100%, 51%), hsl(45, 100%, 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 10%) 0%, hsl(0, 0%, 15%) 50%, hsl(0, 0%, 10%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(45, 100%, 51%) 0%, hsl(45, 100%, 60%) 100%);
+
+    --sidebar-background: 0 0% 10%;   /* #1A1A1A */
+    --sidebar-foreground: 0 0% 100%;  /* #FFFFFF */
+    --sidebar-primary: 45 100% 51%;   /* #FFD700 */
+    --sidebar-primary-foreground: 0 0% 10%; /* Dark text on yellow */
+    --sidebar-accent: 0 0% 15%;       /* #262626 */
+    --sidebar-accent-foreground: 0 0% 100%; /* #FFFFFF */
+    --sidebar-border: 0 0% 25%;       /* #404040 */
+    --sidebar-ring: 45 100% 51%;      /* #FFD700 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for Babil */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-brand {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-brand {
+  animation: pulse-brand 2s ease-in-out infinite;
+}
+
+/* X2 Theme Utility Classes */
+.x2-bg {
+  background-color: #1A1A1A;
+}
+
+.x2-card {
+  background-color: #262626;
+  border: 1px solid #404040;
+  border-radius: 12px;
+}
+
+.x2-accent {
+  color: #FFD700;
+}
+
+.x2-accent-bg {
+  background-color: #FFD700;
+  color: #1A1A1A;
+}
+
+.x2-accent-border {
+  border-color: #FFD700;
+}
+
+.x2-text {
+  color: #FFFFFF;
+}
+
+.x2-text-secondary {
+  color: #A0A0A0;
+}
+
+/* X2 Button Styles */
+.x2-btn-primary {
+  background: linear-gradient(135deg, #FFD700, #FFED4E);
+  color: #1A1A1A;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.x2-btn-primary:hover {
+  background: linear-gradient(135deg, #FFED4E, #FFD700);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.x2-btn-secondary {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.x2-btn-secondary:hover {
+  background: #FFD700;
+  color: #1A1A1A;
+  transform: translateY(-1px);
+}
